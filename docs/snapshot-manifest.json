@@ -1,0 +1,22 @@
+{
+  "snapshot_id": "gateway-docs-snapshot-2026-07-07",
+  "generated_at": "2026-07-07T00:00:00.000Z",
+  "source": "local-allowlist-only",
+  "external_fetch": "pending-github-public-mirror-strategy",
+  "docs": [
+    { "doc_id": "readme", "title": "README", "path": "README.md", "safe_public": true },
+    { "doc_id": "status", "title": "STATUS", "path": "STATUS.md", "safe_public": true },
+    { "doc_id": "client-matrix", "title": "Client Matrix", "path": "docs/CLIENT-MATRIX.md", "safe_public": true },
+    { "doc_id": "auth-model", "title": "Auth Model", "path": "docs/AUTH-MODEL.md", "safe_public": true },
+    { "doc_id": "p0-contract", "title": "P0 Contract", "path": "docs/P0-CONTRACT.md", "safe_public": true },
+    { "doc_id": "p1-local-smoke", "title": "P1 Local Smoke", "path": "docs/P1-LOCAL-SMOKE.md", "safe_public": true },
+    { "doc_id": "p2a-gateway-capabilities", "title": "P2A Gateway Capabilities", "path": "docs/P2A-GATEWAY-CAPABILITIES.md", "safe_public": true },
+    { "doc_id": "public-readonly-package", "title": "Public Read-only Package", "path": "docs/PUBLIC-READONLY-PACKAGE.md", "safe_public": true },
+    { "doc_id": "production-change-list-api-edgars-tools", "title": "Production Change List: api.edgars.tools", "path": "docs/PRODUCTION-CHANGE-LIST-api-edgars-tools.md", "safe_public": true },
+    { "doc_id": "client-connection-pack", "title": "Client Connection Pack", "path": "docs/CLIENT-CONNECTION-PACK.md", "safe_public": true },
+    { "doc_id": "chatgpt-actions-setup", "title": "ChatGPT Actions Setup", "path": "docs/CHATGPT-ACTIONS-SETUP.md", "safe_public": true },
+    { "doc_id": "browser-agent-handoff", "title": "Browser Agent Handoff", "path": "docs/BROWSER-AGENT-HANDOFF.md", "safe_public": true },
+    { "doc_id": "mcp-client-handoff", "title": "MCP Client Handoff", "path": "docs/MCP-CLIENT-HANDOFF.md", "safe_public": true },
+    { "doc_id": "agent-onboarding", "title": "Agent Onboarding", "path": "docs/AGENT-ONBOARDING.md", "safe_public": true }
+  ]
+}
