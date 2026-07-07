@@ -1,0 +1,23 @@
+{
+  "mirror_id": "edgars-agent-gateway-public-docs-mirror",
+  "generated_at": "2026-07-07T00:00:00.000Z",
+  "source_repo": "local docs allowlist",
+  "files": [
+    { "path": "README.md", "doc_id": "readme", "title": "README" },
+    { "path": "STATUS.md", "doc_id": "status", "title": "STATUS" },
+    { "path": "docs/CLIENT-MATRIX.md", "doc_id": "client-matrix", "title": "Client Matrix" },
+    { "path": "docs/AUTH-MODEL.md", "doc_id": "auth-model", "title": "Auth Model" },
+    { "path": "docs/P0-CONTRACT.md", "doc_id": "p0-contract", "title": "P0 Contract" },
+    { "path": "docs/P1-LOCAL-SMOKE.md", "doc_id": "p1-local-smoke", "title": "P1 Local Smoke" },
+    { "path": "docs/P2A-GATEWAY-CAPABILITIES.md", "doc_id": "p2a-gateway-capabilities", "title": "P2A Gateway Capabilities" },
+    { "path": "docs/PUBLIC-READONLY-PACKAGE.md", "doc_id": "public-readonly-package", "title": "Public Read-only Package" },
+    { "path": "docs/PRODUCTION-CHANGE-LIST-api-edgars-tools.md", "doc_id": "production-change-list-api-edgars-tools", "title": "Production Change List: api.edgars.tools" },
+    { "path": "docs/CLIENT-CONNECTION-PACK.md", "doc_id": "client-connection-pack", "title": "Client Connection Pack" },
+    { "path": "docs/CHATGPT-ACTIONS-SETUP.md", "doc_id": "chatgpt-actions-setup", "title": "ChatGPT Actions Setup" },
+    { "path": "docs/BROWSER-AGENT-HANDOFF.md", "doc_id": "browser-agent-handoff", "title": "Browser Agent Handoff" },
+    { "path": "docs/MCP-CLIENT-HANDOFF.md", "doc_id": "mcp-client-handoff", "title": "MCP Client Handoff" },
+    { "path": "docs/AGENT-ONBOARDING.md", "doc_id": "agent-onboarding", "title": "Agent Onboarding" },
+    { "path": "docs/FIRST-REAL-READONLY-TOOL.md", "doc_id": "first-real-readonly-tool", "title": "First Real Read-only Tool" },
+    { "path": "docs/FIRST-EXTERNAL-READONLY-PACK.md", "doc_id": "first-external-readonly-pack", "title": "First External Read-only Pack" }
+  ]
+}
