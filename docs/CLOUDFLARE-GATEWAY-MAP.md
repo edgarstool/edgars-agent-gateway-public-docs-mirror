@@ -8,8 +8,12 @@
   - Status: live
   - Auth: none for current read-only endpoints
 
+- entry.edgars.tools
+  - MCP Portal host
+  - Status: live
+
 - entry.edgars.tools/mcp
-  - MCP Portal
+  - MCP Portal path
   - Status: live
   - Note: separate from api.edgars.tools
 

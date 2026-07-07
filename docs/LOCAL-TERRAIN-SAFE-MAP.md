@@ -4,7 +4,7 @@
 
 - C:\Users\EdgarsTool
   - Windows user / agent config layer
-- V:\projects
+- V:\projects / V:/projects
   - Repo / project workspace
 - G:\AI_WORK_512
   - Runtime / cache / heavy layer
@@ -14,6 +14,11 @@
   - Obsidian canonical intent
 - D:\
   - Deprecated / do not use as source of truth
+
+## Notes
+
+- `V:\projects` and `V:/projects` refer to the same repo/project workspace.
+- Use `repo/project workspace` when describing this layer abstractly.
 
 ## Hard exclusions
 
