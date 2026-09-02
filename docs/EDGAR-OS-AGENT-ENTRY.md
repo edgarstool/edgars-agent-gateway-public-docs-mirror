@@ -9,7 +9,6 @@ This is the public-facing entry point for agents using the edgars-agent-gateway.
 - Local base: this machine / agent runtime
 - Public API: https://api.edgars.tools
 - MCP Portal: https://entry.edgars.tools/mcp
-- Product domain: https://whoasked.vip
 
 ## What this pack is
 
