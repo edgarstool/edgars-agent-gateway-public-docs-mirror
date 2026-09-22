@@ -1,29 +1,43 @@
 # Cloudflare Gateway Map
 
-## Live gateways
+**Verified:** 2026-09-22
 
-- api.edgars.tools
-  - Public read-only HTTP/OpenAPI gateway
-  - Worker: edgars-agent-gateway-api
+## Current canonical gateways
+
+- `mcp.edgars.tools`
+  - Role: canonical EDGAR MCP endpoint
+  - MCP path: `/mcp`
   - Status: live
-  - Auth: none for current read-only endpoints
+  - Unauthenticated behavior: HTTP 401 Bearer challenge
+  - Health: HTTP 200
+  - OAuth resource metadata: live, backed by Descope
 
-- entry.edgars.tools
-  - MCP Portal host
-  - Status: live
+- `knowledge-mcp.edgars.tools`
+  - Role: canonical Knowledge MCP endpoint
+  - MCP path: `/mcp`
+  - Status: live / authentication-protected
+  - Unauthenticated behavior: HTTP 401
 
-- entry.edgars.tools/mcp
-  - MCP Portal path
-  - Status: live
-  - Note: separate from api.edgars.tools
+## Reserved / non-canonical surfaces
 
-- mcp.edgars.tools
-  - Upstream MCP endpoint
-  - Status: live
-  - Note: separate from api.edgars.tools
+- `entry.edgars.tools`
+  - Worker: `edgars-entry`
+  - Role: legacy / reserved entry shell
+  - Status: placeholder
+  - `/mcp` currently returns placeholder JSON
+  - Do not treat as active MCP Portal authority
 
-## Hard rules
+- `api.edgars.tools`
+  - Service: `edgars-api-gateway`
+  - Role: HTTP gateway skeleton
+  - `/health`: HTTP 200, `stage=skeleton`
+  - `/v1/tools`: HTTP 404
+  - `/openapi.json`: HTTP 404
+  - `/version`: HTTP 404
+  - Do not advertise as a working OpenAPI/tool-execution surface until re-verified
 
-- Do NOT change Access policy
-- Do NOT add secrets
-- Do NOT expose private APIs
+## Documentation rule
+
+Live provider state + consumption-boundary checks override older phase documents.
+Historical references to `entry.edgars.tools/mcp` as the active portal or to
+`api.edgars.tools` as a complete public OpenAPI gateway are not current authority.
