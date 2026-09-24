@@ -1,6 +1,6 @@
 # Client Connection Pack
 
-**Verified:** 2026-09-22
+**Verified:** 2026-09-25
 
 ## MCP clients
 
@@ -15,48 +15,47 @@ Current live behavior:
 - protected-resource metadata is available
 - authorization server is provided by Descope
 
-This is the current canonical MCP entry for MCP-capable clients.
-
 ### Knowledge MCP
 
 Use:
 
 `https://knowledge-mcp.edgars.tools/mcp`
 
-It is a separate authentication-protected MCP surface for Edgar Knowledge.
-
 ## Legacy entry hostname
 
-Do **not** currently use `https://entry.edgars.tools/mcp` as the MCP endpoint.
-
-Live verification shows it returns the `edgars-entry` placeholder JSON on
-`/mcp` and on OAuth well-known paths. Older documents that call this the
-Cloudflare MCP Portal are historical/stale.
+Do **not** use `https://entry.edgars.tools/mcp` as the canonical MCP endpoint.
+It currently returns the `edgars-entry` placeholder JSON.
 
 ## HTTP / OpenAPI clients
 
-`https://api.edgars.tools` is currently only a skeleton gateway:
+Use:
 
-- `/health` -> HTTP 200, service `edgars-api-gateway`, `stage=skeleton`
-- `/v1/tools` -> HTTP 404
-- `/openapi.json` -> HTTP 404
-- `/version` -> HTTP 404
+- API base: `https://api.edgars.tools`
+- OpenAPI schema: `https://api.edgars.tools/openapi.json`
+- Tool catalog: `https://api.edgars.tools/v1/tools`
+- Tool invocation: `POST https://api.edgars.tools/v1/tools/<tool-id>`
 
-Therefore there is **no currently accepted public HTTP/OpenAPI tool surface in this package**.
-Do not configure ChatGPT Actions, Custom GPT OpenAPI, browser agents, or generic HTTP
-clients against those missing routes until a fresh deployment and client-level verification pass.
+Live acceptance on 2026-09-25:
+
+- `/health` -> HTTP 200
+- `/version` -> HTTP 200 with `deployed=true`
+- `/v1/tools` -> HTTP 200 with 11 tools
+- `/openapi.json` -> HTTP 200, OpenAPI 3.1.0, 12 paths
+- real `POST /v1/tools/health.check` -> HTTP 200
+- docs search -> PASS
+- Cursor client guide -> `https://mcp.edgars.tools/mcp`
 
 ## Current client matrix
 
 | client type | current entry | status |
 |---|---|---|
-| Cursor / Windsurf / Claude Desktop / Codex / generic MCP | `https://mcp.edgars.tools/mcp` | current canonical MCP |
-| Knowledge-aware MCP client | `https://knowledge-mcp.edgars.tools/mcp` | current Knowledge MCP |
-| `entry.edgars.tools/mcp` consumers | none | legacy placeholder; do not use |
-| ChatGPT Actions / Custom GPT OpenAPI | none from this package | API schema route currently 404 |
-| Generic HTTP/OpenAPI clients | none from this package | tool routes currently 404 |
+| Cursor / Windsurf / Claude Desktop / Codex / generic MCP | `https://mcp.edgars.tools/mcp` | canonical MCP |
+| Knowledge-aware MCP client | `https://knowledge-mcp.edgars.tools/mcp` | canonical Knowledge MCP |
+| ChatGPT Actions / Custom GPT OpenAPI | `https://api.edgars.tools/openapi.json` | live accepted |
+| Browser / generic HTTP client | `https://api.edgars.tools` | live accepted |
+| `entry.edgars.tools/mcp` consumers | none | legacy placeholder |
 
 ## Revalidation rule
 
-A previously documented gateway becomes current again only after live endpoint
-verification and a real client consumption test pass.
+A documented gateway remains current only while live endpoint verification and a
+real client consumption test continue to pass.

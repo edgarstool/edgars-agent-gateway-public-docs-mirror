@@ -1,7 +1,7 @@
 # STATUS
 
-**Verified:** 2026-09-22  
-**Phase:** live MCP + skeleton HTTP gateway + legacy entry placeholder
+**Verified:** 2026-09-25  
+**Phase:** live MCP + live read-only HTTP/OpenAPI gateway + legacy entry placeholder
 
 ## Current live state
 
@@ -17,15 +17,20 @@
   - legacy/reserved entry shell
   - currently returns placeholder JSON, not MCP protocol/auth behavior
 - `https://api.edgars.tools`
-  - Worker responds and `/health` -> HTTP 200
-  - health reports `stage=skeleton`
-  - `/v1/tools`, `/openapi.json`, and `/version` -> HTTP 404
-  - public HTTP/OpenAPI client surface is therefore **not currently accepted as live**
+  - canonical read-only HTTP/OpenAPI gateway
+  - Worker: `edgars-api-gateway`
+  - production version: `fd1a5104-0087-40ac-afdf-319f64517df8`
+  - `/health` -> HTTP 200
+  - `/version` -> HTTP 200 with `deployed=true`
+  - `/v1/tools` -> HTTP 200 with 11 tools
+  - `/openapi.json` -> HTTP 200, OpenAPI 3.1.0 with 12 paths
+  - real POST tool calls and docs search pass
+  - `gateway.client_guide.get(cursor)` -> `https://mcp.edgars.tools/mcp`
 
 ## Interpretation
 
-Older snapshots in this repository that say the MCP Portal is live at
-`entry.edgars.tools/mcp` or that the OpenAPI tool surface is live at
-`api.edgars.tools` are stale relative to the verification above.
+The HTTP/OpenAPI client surface is accepted as live again. Older snapshots that
+call `api.edgars.tools` a skeleton are stale relative to this verification.
 
-No secret, DNS, route, OAuth, Access, or Worker deployment change is implied by this documentation correction.
+Older snapshots that call `entry.edgars.tools/mcp` the active MCP Portal also
+remain stale; canonical MCP is `mcp.edgars.tools/mcp`.
